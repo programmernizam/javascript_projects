@@ -74,3 +74,45 @@ function resetState() {
     }
 }
 
+function selectAnswer(e) {
+    const selectBtn = e.target;
+    const isCorrect = selectBtn.dataset.correct === "true";
+    if (isCorrect) {
+        selectBtn.classList.add("correct");
+        score++;
+    } else {
+        selectBtn.classList.add("incorrect")
+    }
+    Array.from(answerBtn.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextBtn.style.display = "block";
+}
+
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `Your scored ${score} out of ${questions.length}!`
+    nextBtn.innerHTML = "Play Again";
+    nextBtn.style.display = "block";
+}
+
+function handleNextBtn() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion()
+    } else {
+        showScore()
+    }
+}
+
+nextBtn.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextBtn();
+    } else {
+        startQuiz()
+    }
+})
+startQuiz()

@@ -67,3 +67,10 @@ function showQuestion() {
     })
 }
 
+function resetState() {
+    nextBtn.style.display = "none"
+    while (answerBtn.firstChild) {
+        answerBtn.removeChild(answerBtn.firstChild)
+    }
+}
+

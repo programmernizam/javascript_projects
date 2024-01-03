@@ -97,5 +97,21 @@ function showScore() {
     nextBtn.innerHTML = "Play Again";
     nextBtn.style.display = "block";
 }
+function handleNextBtn() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion()
+    } else {
+        showScore()
+    }
+}
 
+nextBtn.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextBtn();
+    } else {
+        startQuiz()
+    }
+})
+startQuiz()
 

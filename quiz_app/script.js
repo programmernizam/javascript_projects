@@ -35,4 +35,17 @@ const questions = [
             { text: "Nitrogen", correct: false }
         ]
     }
-]
+];
+const questionElement = document.getElementById("question");
+const answerBtn = document.getElementById("answer_buttons");
+const nextBtn = document.getElementById("next_btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextBtn.innerHTML = "Next";
+    showQuestion()
+}

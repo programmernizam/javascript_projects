@@ -91,7 +91,6 @@ function selectAnswer(e) {
     });
     nextBtn.style.display = "block";
 }
-
 function showScore() {
     resetState();
     questionElement.innerHTML = `Your scored ${score} out of ${questions.length}!`
@@ -99,20 +98,4 @@ function showScore() {
     nextBtn.style.display = "block";
 }
 
-function handleNextBtn() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion()
-    } else {
-        showScore()
-    }
-}
 
-nextBtn.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        handleNextBtn();
-    } else {
-        startQuiz()
-    }
-})
-startQuiz()

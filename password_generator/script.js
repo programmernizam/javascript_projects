@@ -18,5 +18,10 @@ function createPassword() {
     while (length > password.length) {
         password += allCars[Math.floor(Math.random() * allCars.length)]
     }
-    
+    passwordBox.value = password;
+}
+
+function copyPassword() {
+    passwordBox.select();
+    document.execCommand("copy")
 }

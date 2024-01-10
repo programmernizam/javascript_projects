@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why React - Vanilla JS vs React.js</title>
+    <title>Product Card</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="./images/favicon.png" rel="shortcut icon" />
   </head>
@@ -25,11 +25,16 @@
               Reactive Accelerator Course
             </h3>
           </a>
-          <span class="text-xl font-medium text-teal-500">Total: ৳ 5000</span>
+          <span class="text-xl font-medium text-teal-500" id="total"
+            >Total: ৳ 5000</span
+          >
         </div>
         <div class="flex items-center justify-between mt-5">
-          <span class="text-2xl font-bold text-slate-300">৳ 5000</span>
+          <span class="text-2xl font-bold text-slate-300" id="price"
+            >৳ 5000</span
+          >
           <a
+            id="addToCart"
             href="#"
             class="text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-[#087ea4] hover:bg-[#087ea4]/[.8] focus:ring-[#087ea4]/[.5]"
             >Add to cart</a
@@ -37,5 +42,6 @@
         </div>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

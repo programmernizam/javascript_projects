@@ -9,3 +9,8 @@ let totalPrice = 0;
 // Set product Initially
 price.innerText = `৳ ${productPrice}`
 total.innerText = `Total: ৳ ${totalPrice}`
+
+button.addEventListener("click", () => {
+    totalPrice += productPrice;
+    total.innerText = `Total: ৳ ${totalPrice}`
+})

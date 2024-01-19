@@ -37,3 +37,29 @@ function show(el) {
 function enable(el) {
     el.disabled = false;
 }
+
+function disable(el) {
+    el.disabled = true;
+}
+
+function submitForm(answer) {
+    // Pretend it's hitting the network.
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (answer.toLowerCase() === 'dhaka') {
+                resolve();
+            } else {
+                reject(new Error('Good guess but a wrong answer. Try again!'));
+            }
+        }, 1500);
+    });
+}
+
+let form = document.getElementById('form');
+let textarea = document.getElementById('textarea');
+let button = document.getElementById('button');
+let loadingMessage = document.getElementById('loading');
+let errorMessage = document.getElementById('error');
+let successMessage = document.getElementById('success');
+form.onsubmit = handleFormSubmit;
+textarea.oninput = handleTextareaChange;

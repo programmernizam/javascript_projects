@@ -34,3 +34,6 @@ function show(el) {
     el.style.display = '';
 }
 
+function enable(el) {
+    el.disabled = false;
+}

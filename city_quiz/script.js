@@ -1,0 +1,21 @@
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    disable(textarea);
+    disable(button);
+    show(loadingMessage);
+    hide(errorMessage);
+    try {
+        await submitForm(textarea.value);
+        show(successMessage);
+        hide(form);
+    } catch (err) {
+        show(errorMessage);
+        errorMessage.textContent = err.message;
+    } finally {
+        hide(loadingMessage);
+        enable(textarea);
+        enable(button);
+    }
+}
+
+

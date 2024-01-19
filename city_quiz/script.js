@@ -30,3 +30,7 @@ function hide(el) {
     el.style.display = 'none';
 }
 
+function show(el) {
+    el.style.display = '';
+}
+

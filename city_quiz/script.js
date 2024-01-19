@@ -18,4 +18,11 @@ async function handleFormSubmit(e) {
     }
 }
 
+function handleTextareaChange() {
+    if (textarea.value.length === 0) {
+        disable(button);
+    } else {
+        enable(button);
+    }
+}
 
